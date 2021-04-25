@@ -14,7 +14,8 @@
     cursor: pointer;
 }
 
-.DeleteBtn:disabled {
+.DeleteBtn:disabled,
+.DeleteBtn:disabled:hover {
     background: #C9C9C9;
 }
 
