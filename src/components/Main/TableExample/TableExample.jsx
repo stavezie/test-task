@@ -21,7 +21,7 @@ const TableExample = (props) => {
                 </label>
                 <span className={classes.number}>№</span>
                 <span className={classes.family}>ФИО</span>
-                <span className={classes.age}>Возраст</span>
+                <span className={classes.age}>Возраст (лет)</span>
                 <span className={classes.height}>Рост</span>
                 <span className={classes.weight}>Вес</span>
                 <span className={classes.salary}>Зарплата</span>

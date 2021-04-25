@@ -1,5 +1,12 @@
 .topItem {
     display: flex;
+    background: #F0F0F0;
+    height: 48px;
+    align-items: center;
+    font-weight: 700;
+    color: #4C4C4C;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
 }
 .input {
     display: none;
