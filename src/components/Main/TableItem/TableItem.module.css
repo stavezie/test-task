@@ -1,0 +1,110 @@
+.user {
+    display: flex;
+    align-items: center;
+    padding: 12px 0;
+}
+
+.TableItem_user__spec {
+    background: green;
+}
+
+.user_checkbox {
+    display: none;
+}
+
+
+.user_id {
+    width: 10%;
+}
+
+.user__name {
+    width: 20%;
+}
+
+.user__birth {
+    width: 10%;
+}
+
+.user__height {
+    width: 10%;
+}
+
+.user__weight {
+    width: 10%;
+}
+
+.user__salary {
+    width: 20%;
+}
+
+.label {
+    display: inline-flex;
+    align-self: center;
+    width: 5%;
+    margin: 0;
+}
+.fake {
+    width: 24px;
+    height: 24px;
+    border: 1px solid #E4E4E4;
+    border-radius: 4px;
+
+    position: relative;
+}
+
+.fake::before {
+    content: '';
+    position: absolute;
+    top: 70%;
+    left: 25%;
+    width: 6px;
+    height: 2px;
+    background: #55A985;
+    -webkit-transform: rotate(50deg) translate(-50%, -50%);
+    transform: rotate(50deg) translate(-50%, -50%);
+
+    opacity: 0;
+    transition: .2s;
+}
+
+.fake::after {
+    content: '';
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    width: 14px;
+    height: 2px;
+    background: #55A985;
+    -webkit-transform: rotate(-50deg) translate(-50%, -50%);
+    transform: rotate(-50deg) translate(-50%, -50%);
+
+    opacity: 0;
+    transition: .2s;
+}
+
+.user_checkbox:checked + .fake::before,
+.user_checkbox:checked + .fake::after {
+    opacity: 1;
+}
+
+.user_checkbox:checked + .fake {
+    border-color: #55A985;
+}
+
+.bin, .edit {
+    width: 14px;
+    height: 16px;
+    fill: #4C4C4C;
+    cursor: pointer;
+}
+
+.bin:hover, .edit:hover {
+    fill: green;
+    transition: .2s linear;
+}
+
+.removeBtn, .editBtn {
+    background: transparent;
+    outline:none;
+    border: none;
+}
