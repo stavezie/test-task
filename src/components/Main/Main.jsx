@@ -9,8 +9,8 @@ const Main = (props) => {
             <TableItem
             users={props.users}
             setUsers={props.setUsers}
-            checked={props.checked}
-            setChecked={props.setChecked}
+            currency={props.currency}
+            setCurrency={props.setCurrency}
             />
 
         </div>

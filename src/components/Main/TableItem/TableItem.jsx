@@ -10,20 +10,27 @@ const TableItem = (props) => {
 
     const users = props.users;
     const setUsers = props.setUsers;
+    const currency = props.currency;
+    const setCurrency = props.setCurrency;
+    window.currency = currency;
 
-    const getData= () => {
+    const getUsersData = () => {
         axios.get('https://api.npoint.io/324f4ca2cdd639760638').then(resolve => {
             setUsers(resolve.data)
+        })
+    }
+
+    const getCurrencyData = () => {
+        axios.get('https://api.ratesapi.io/api/latest').then(resolve => {
+            setCurrency(resolve.data.rates.USD)
         })
     }
 
 
 
     React.useEffect(() => {
-        getData();
-        users.forEach(user => {
-            return user.isChecked = false;
-        })
+        getUsersData();
+        getCurrencyData();
     }, [])
 
 
@@ -55,6 +62,10 @@ const TableItem = (props) => {
         setUsers(removeArr)
     }
 
+    function setSalary(userSalary) {
+        return Math.floor(userSalary * currency)
+    }
+
     function handleCheckChildElement(event) {
         users.map(user => {
             if (user.first_name === event.target.value) {
@@ -73,7 +84,6 @@ const TableItem = (props) => {
     return (
         <div>
             <TableExample
-                checked={props.checked}
                 setChecked={props.setChecked}
                 users={users}
                 setUsers={setUsers}
@@ -92,7 +102,7 @@ const TableItem = (props) => {
                         <div className={classes.user__birth}>{timeConverter(user.date_of_birth)}</div>
                         <div className={classes.user__height}>{FeetConverter(user.height)}</div>
                         <div className={classes.user__weight}>{WeightConverter(user.weight)}</div>
-                        <div className={classes.user__salary}>1000$</div>
+                        <div className={classes.user__salary}>{setSalary(user.salary)} $</div>
                         <div>
                             <button className={classes.editBtn}>
                                 <ImPencil className={classes.edit}/>
