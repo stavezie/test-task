@@ -25,7 +25,7 @@ const DeleteBtn = (props) => {
 
 
     return (
-        <div>
+        <div className={classes.DeleteBtnWrapper}>
             <button onClick={deleteSelected} disabled={!CountIsTrue} className={classes.DeleteBtn}>Удалить выбранные</button>
         </div>
     );

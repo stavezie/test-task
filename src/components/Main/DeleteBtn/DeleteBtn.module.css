@@ -1,3 +1,7 @@
+.DeleteBtnWrapper {
+    display: flex;
+    justify-content: flex-end;
+}
 .DeleteBtn {
     background: #55A985;
     padding: 14.5px 24px;
@@ -8,7 +12,6 @@
     border: 0;
     outline: none;
     cursor: pointer;
-
 }
 
 .DeleteBtn:disabled {
