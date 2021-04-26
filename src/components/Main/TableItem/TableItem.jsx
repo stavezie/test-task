@@ -83,11 +83,6 @@ const TableItem = (props) => {
 
     return (
         <div>
-            <TableExample
-                setChecked={props.setChecked}
-                users={users}
-                setUsers={setUsers}
-            />
             {users.map(user => {
                 return(
                     <div className={`${classes.user} ${user.isChecked ? 'TableItem_user__spec' : ''}`}>
@@ -114,10 +109,6 @@ const TableItem = (props) => {
                     </div>
                 )
             })}
-            <DeleteBtn
-                users={users}
-                setUsers={setUsers}
-            />
         </div>
     );
 };
