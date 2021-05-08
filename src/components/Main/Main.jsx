@@ -1,7 +1,7 @@
 import React from 'react';
 import TableItem from "./TableItem/TableItem";
 import DeleteBtn from "./DeleteBtn/DeleteBtn";
-import TableExample from "./TableExample/TableExample";
+import TableHead from "./TableExample/TableHead";
 
 const Main = (props) => {
 
@@ -10,7 +10,7 @@ const Main = (props) => {
 
     return (
         <div>
-            <TableExample
+            <TableHead
                 setChecked={props.setChecked}
                 users={users}
                 setUsers={setUsers}

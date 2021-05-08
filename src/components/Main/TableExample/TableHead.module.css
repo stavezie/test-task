@@ -1,0 +1,91 @@
+.topItem {
+    display: flex;
+    background: #F0F0F0;
+    height: 48px;
+    align-items: center;
+    font-weight: 700;
+    color: #4C4C4C;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+}
+.input {
+    display: none;
+}
+
+.number {
+    width: 10%;
+}
+
+.family {
+    width: 20%;
+}
+
+.age {
+    width: 10%;
+}
+
+.height {
+    width: 10%;
+}
+
+.weight {
+    width: 10%;
+}
+
+.salary {
+    width: 20%;
+}
+
+.label {
+    display: inline-flex;
+    align-self: center;
+    width: 5%;
+    margin: 0;
+}
+.fake {
+    width: 24px;
+    height: 24px;
+    border: 1px solid #E4E4E4;
+    border-radius: 4px;
+
+    position: relative;
+}
+
+.fake::before {
+    content: '';
+    position: absolute;
+    top: 70%;
+    left: 25%;
+    width: 6px;
+    height: 2px;
+    background: #55A985;
+    -webkit-transform: rotate(50deg) translate(-50%, -50%);
+    transform: rotate(50deg) translate(-50%, -50%);
+
+    opacity: 0;
+    transition: .2s;
+}
+
+.fake::after {
+    content: '';
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    width: 14px;
+    height: 2px;
+    background: #55A985;
+    -webkit-transform: rotate(-50deg) translate(-50%, -50%);
+    transform: rotate(-50deg) translate(-50%, -50%);
+
+    opacity: 0;
+    transition: .2s;
+}
+
+.input:checked + .fake::before,
+.input:checked + .fake::after {
+    opacity: 1;
+}
+
+.input:checked + .fake {
+    border-color: #55A985;
+}

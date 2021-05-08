@@ -13,7 +13,7 @@ const DeleteBtn = (props) => {
     }
 
     function isTrue() {
-        users.map(user => {
+        users.forEach(user => {
             if (user.isChecked) {
                 CountIsTrue += 1;
             }
@@ -21,8 +21,6 @@ const DeleteBtn = (props) => {
     }
 
     isTrue();
-
-
 
     return (
         <div className={classes.DeleteBtnWrapper}>
